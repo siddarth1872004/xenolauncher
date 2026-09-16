@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xeno — Minimal Launcher</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 { margin-bottom: 0.5rem; color: #222; }
+        .subtitle { color: #666; margin-bottom: 2rem; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .nav { margin: 2rem 0; padding: 1rem; background: #f9f9f9; border-radius: 8px; }
+        .nav a { display: inline-block; margin-right: 1.5rem; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Xeno — Minimal Launcher</h1>
+        <p class="subtitle">A truly freeform, customisable launcher for Android.</p>
+
+        <div class="nav">
+            <a href="#privacy-policy">📋 Privacy Policy</a>
+            <a href="https://github.com/xenobuildssupport/xeno-launcher">🔗 GitHub</a>
+            <a href="https://play.google.com/store/apps/details?id=com.xeno.launcher">🎮 Play Store</a>
+        </div>
+
+        <section id="privacy-policy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> September 15, 2026</p>
+            
+            <h3>TL;DR</h3>
+            <p>Xeno does not collect, transmit, or store any personal data on remote servers. All configuration, widget settings, home screen layouts, and preferences are stored locally on your device only.</p>
+
+            <h3>What Data Does Xeno Collect?</h3>
+            <p>Xeno stores the following data <strong>entirely on your device</strong> in its private application directory:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Home screen layout &amp; configuration</li>
+                <li>Widget settings</li>
+                <li>User preferences (themes, gestures, icon packs, etc.)</li>
+                <li>App drawer state</li>
+                <li>Preset/backup exports (generated on-demand)</li>
+            </ul>
+
+            <h3>What Xeno Does NOT Collect</h3>
+            <p>Xeno <strong>does not</strong>:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Collect or transmit personal information (name, email, phone, location, etc.)</li>
+                <li>Send analytics, crash reports, or telemetry</li>
+                <li>Track app usage or home screen activity</li>
+                <li>Require cloud sign-in or account creation</li>
+                <li>Integrate with third-party advertising or tracking services</li>
+            </ul>
+
+            <h3>Permissions Explained</h3>
+            <table style="width: 100%; margin: 1rem 0; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <th style="text-align: left; padding: 0.5rem;">Permission</th>
+                    <th style="text-align: left; padding: 0.5rem;">Why Needed</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.5rem;"><code>QUERY_ALL_PACKAGES</code></td>
+                    <td style="padding: 0.5rem;">Populate app drawer with installed apps.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.5rem;"><code>CHANGE_CONFIGURATION</code></td>
+                    <td style="padding: 0.5rem;">Listen for system-wide config changes (theme, font size).</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.5rem;"><code>READ_CALENDAR</code></td>
+                    <td style="padding: 0.5rem;"><em>Optional</em> — only if using Calendar widget.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.5rem;"><code>READ_CALL_LOG</code></td>
+                    <td style="padding: 0.5rem;"><em>Optional</em> — only if using call-log features.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.5rem;"><code>RECEIVE_BOOT_COMPLETED</code></td>
+                    <td style="padding: 0.5rem;">Auto-launch on device restart.</td>
+                </tr>
+            </table>
+
+            <h3>Third-Party Services</h3>
+            <p>Xeno does <strong>not</strong> use any third-party analytics, crash-reporting, or tracking services. No data is sent to Google, Firebase, Mixpanel, or any external service.</p>
+
+            <h3>Data Retention &amp; Deletion</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>As long as you use Xeno:</strong> All data persists until you uninstall.</li>
+                <li><strong>After uninstalling:</strong> Your data is automatically deleted (standard Android behavior).</li>
+                <li><strong>Backups you create:</strong> Remain until you delete them manually.</li>
+            </ul>
+
+            <h3>Contact &amp; Support</h3>
+            <p>Questions about this policy? Contact us:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>GitHub Issues:</strong> <a href="https://github.com/xenobuildssupport/xeno-launcher/issues">xeno-launcher/issues</a></li>
+                <li><strong>Email:</strong> <a href="mailto:xenobuildssupport@gmail.com">xenobuildssupport@gmail.com</a></li>
+            </ul>
+
+            <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.9rem; color: #666;">
+                For the full privacy policy with detailed compliance information (GDPR, CCPA, etc.), see <a href="https://raw.githubusercontent.com/xenobuildssupport/xeno-launcher/main/store/PRIVACY-POLICY.md">PRIVACY-POLICY.md</a> in the repository.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
