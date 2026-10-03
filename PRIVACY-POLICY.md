@@ -1,6 +1,6 @@
 # Privacy Policy for Xeno — Minimal Launcher
 
-**Last updated:** September 28, 2026
+**Last updated:** October 2, 2026
 
 ## Overview
 
@@ -21,6 +21,7 @@ Xeno stores the following data **entirely on your device** in its private applic
 - **User preferences** — theme choices, gesture settings, freeform editing toggles, icon pack selections, and visual customizations
 - **App drawer state** — sorted app list, app labels, and folder assignments, plus your last five drawer searches (turning Search history off also forgets them)
 - **App lock & app timer settings** — which apps are locked and each timer's daily allowance
+- **Pictures and files you add** — photos you pick for albums, icons or stickers, fonts and icon packs you import from a file, and a copy of your wallpaper for the Blur filter; Xeno keeps its own copy of each so they keep working
 - **Preset/backup exports** — snapshots of your entire launcher state, generated on-demand and stored locally (or exported to external storage if you choose to share them)
 
 ### Data NOT Collected
@@ -31,7 +32,7 @@ Xeno **does not**:
 - Keep its own record of your app usage, home screen activity, or widget interactions (with Usage access granted, it reads Android's on-device usage totals for the features listed under `PACKAGE_USAGE_STATS` below, and keeps no log of its own)
 - Require cloud sign-in or account creation
 - Integrate with third-party advertising or tracking services
-- Collect browsing history, contacts, calendar events, or other private data (even if widgets display such data, they fetch it directly from your device's local system services, not through Xeno)
+- Collect browsing history, contacts, calendar events, or other private data (when a widget or search shows such data, Xeno reads it on demand from Android's own on-device providers to display it, and never keeps or sends it)
 
 ---
 
@@ -43,12 +44,12 @@ sync with the app's actual manifest, not a generic template:
 | Permission | Why Needed |
 |---|---|
 | `QUERY_ALL_PACKAGES` | Xeno is a home screen replacement. Listing and launching your installed apps — the app drawer and home screen — cannot work without it. The list is never transmitted off your device. |
-| `SET_WALLPAPER` | Only used if you choose Settings' "Set plain wallpaper" option, which replaces your wallpaper with a flat colour derived from your accent colour. |
+| `SET_WALLPAPER` | Only used if you set a wallpaper from Xeno (Settings › Appearance › Wallpaper: a photo you pick, a flat colour, or a gradient made from your accent colour). |
 | `ACCESS_NETWORK_STATE` / `ACCESS_WIFI_STATE` | Used only to show connectivity status where relevant (e.g., a Quick Settings-style toggle). No network requests are made using this. |
 | `EXPAND_STATUS_BAR` | Lets a tap on the status bar area open the notification shade, matching standard Android home-screen behaviour. |
 | `REQUEST_DELETE_PACKAGES` | Lets you uninstall an app directly from the app drawer's long-press menu, using Android's own uninstall confirmation dialog. |
-| `SET_ALARM` (`com.android.alarm.permission.SET_ALARM`) | Used only if you tap Xeno's Clock widget/shortcut and choose to set an alarm — opens your device's own alarm app. |
-| `KILL_BACKGROUND_PROCESSES` | Used only for the optional "clear background apps" gesture/shortcut, if you enable it. |
+| `SET_ALARM` (`com.android.alarm.permission.SET_ALARM`) | Used only when you tap Xeno's Clock widget and haven't picked a clock app for it: Xeno asks your device's own clock app to show its alarms (some clock apps only accept that request from apps holding this permission). Xeno never sets, changes or reads alarms itself. |
+| `KILL_BACKGROUND_PROCESSES` | Used only when you pick **Force stop** from an app's long-press menu on the home screen: Xeno stops that one app's background processes, then opens its App info page so you can use Android's own Force stop button. |
 | `PACKAGE_USAGE_STATS` | **Optional.** Read on demand from Android's on-device usage stats for: your daily screen-time total, app timers (how long an app has been used today, against its allowance), and the app drawer's "Most used" sort and Recent row. Never stored or transmitted. These features are simply hidden or fall back to A–Z if you don't grant it. |
 | `READ_CALENDAR` | **Optional**, only used if you place a Calendar widget. The widget reads your calendar directly from your device's calendar provider to display upcoming events. Never stored or transmitted; the widget shows nothing if you don't grant it. |
 | `READ_CONTACTS` | **Optional**, off by default. Only if you turn on "Search contacts" (Settings › App drawer): the drawer's search box also matches your contacts by name, read on demand as you type. Never stored, indexed or transmitted. Not requested while the setting is off. |
@@ -93,6 +94,7 @@ Xeno does **not** use any third-party analytics, crash-reporting, or tracking se
 
 - Query installed apps (via `PackageManager`)
 - Read calendar data (via `CalendarProvider`, if you use a Calendar widget)
+- Read the other on-device data listed in section 2, only for the features you turn on there (usage totals, contact names, file names, notifications)
 - Access system settings and themes
 
 No data is sent to Google, Firebase, Mixpanel, or any other external service.
@@ -105,6 +107,7 @@ No data is sent to Google, Firebase, Mixpanel, or any other external service.
 
 - Xeno does not automatically share your data with other apps.
 - If you explicitly create a backup/preset export and share it (e.g., via email or cloud storage), you are choosing to share that data. The file itself is not protected and can be read by any app you grant it to.
+- The links on the About Xeno page (Google Play, X, email) only open in the app you choose, such as your browser. Xeno sends nothing itself. What happens there is covered by that service's own privacy policy.
 - If a Calendar widget or a contact search result is displayed, that data comes from your device's system providers, not from Xeno. Xeno only reads and displays it; it does not transmit it elsewhere.
 
 ### With Developers
